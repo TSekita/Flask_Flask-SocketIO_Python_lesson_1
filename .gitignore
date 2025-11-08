@@ -1,0 +1,7 @@
+# 一般的なPythonの無視設定
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
