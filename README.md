@@ -77,3 +77,19 @@ project/
 └── templates/
     └── index.html
 </pre>
+
+#### Q9. render_template()の役割を説明せよ。
+
+A. render_template()は、FlaskでHTMLファイル（テンプレート）を
+
+    読み込み、Pythonから渡した変数を埋め込んでブラウザに返す関数。
+
+#### Q10. templates/ディレクトリの意味を説明せよ。
+
+A. FlaskではHTMLテンプレートを配置する標準ディレクトリは
+
+    template/です。
+
+    Flaskはrender_template('index.html')を呼び出すと、
+
+    自動的にアプリケーションルート直下のtemplateフォルダ内を探索します。
