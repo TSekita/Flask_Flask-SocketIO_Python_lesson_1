@@ -51,7 +51,6 @@ A. debug=Trueにすると、Flaskがデバッグモードで動作する。
 #### Q7. Flaskアプリを0.0.0.0で起動すると何が変わるか。
 
 A. Flaskアプリを0.0.0.0で起動すると、ローカルホスト以外
-
     （同一LAN上のほかの端末など）からもアクセスできるようになる。
 
 #### Q8. HTMLを返すエンドポイントを作る方法を示せ。
@@ -81,15 +80,29 @@ project/
 #### Q9. render_template()の役割を説明せよ。
 
 A. render_template()は、FlaskでHTMLファイル（テンプレート）を
-
     読み込み、Pythonから渡した変数を埋め込んでブラウザに返す関数。
 
 #### Q10. templates/ディレクトリの意味を説明せよ。
 
 A. FlaskではHTMLテンプレートを配置する標準ディレクトリは
-
     template/です。
-
     Flaskはrender_template('index.html')を呼び出すと、
-
     自動的にアプリケーションルート直下のtemplateフォルダ内を探索します。
+
+#### Q11. FlaskでPOSTメソッドを受け取る方法を書け。
+
+A. 
+```python
+from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route('/submit', methods=['POST'])
+def receive_post():
+    data = request.form['name']          # フォームデータの場合
+    # または data = request.json          # JSONの場合
+    return f"受け取ったデータ: {data}"
+
+if __name__ == '__main__':
+    app.run()
+```
